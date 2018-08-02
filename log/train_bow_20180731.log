@@ -1,0 +1,21 @@
+nohup: ignoring input
+/data00/home/wupeihao/anaconda4/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+loading data...
+Start Vocab Create
+Data Load End For Vocab Create
+Vocabulary Size: 18484
+WARNING:tensorflow:From /data00/home/zhaodongdi/workspace/lab-speech/SimNet/src/model.py:103: calling l2_normalize (from tensorflow.python.ops.nn_impl) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+2018-07-31 16:57:02.669054: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-07-31 16:57:04.099812: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:84:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2018-07-31 16:57:04.099877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
+2018-07-31 16:57:04.389027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-07-31 16:57:04.389085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
+2018-07-31 16:57:04.389097: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
+2018-07-31 16:57:04.389410: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5589 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:84:00.0, compute capability: 6.1)
+0it [00:00, ?it/s]2it [00:00, 14.10it/s]4it [00:00, 14.50it/s]6it [00:00, 14.65it/s]8it [00:00, 13.38it/s]10it [00:00, 13.64it/s]11it [00:00, 14.38it/s]

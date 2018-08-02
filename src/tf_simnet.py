@@ -14,6 +14,7 @@ from dataloader import train_data_loader, test_data_loader, inference_data_loade
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', help="'train', 'test' or 'inference'")
+    parser.add_argument('--encoder_type', help="'cnn', or 'bow'")
     parser.add_argument('--train_pos_file', help="train positive file")
     parser.add_argument('--train_neg_file', help="train negative file")
     parser.add_argument('--dev_pos_file', help="validation positive file")
@@ -21,6 +22,7 @@ def parse_args():
     parser.add_argument('--test_pos_file', help="test positive file")
     parser.add_argument('--test_neg_file', help="test negative file")
     parser.add_argument('--infer_file', help="inference data file")
+    parser.add_argument('--infer_out_file', help="inference output file")
     parser.add_argument('--config', help="config file path, check before train")
 
     args = parser.parse_args()
@@ -40,7 +42,7 @@ def train(args, config):
                     tf.local_variables_initializer())
 
     with tf.variable_scope('Model', reuse=None, initializer=init):
-        model = SimNet(config)
+        model = SimNet(config, args.encoder_type)
 
     # train_init_op = train_iterator.make_initializer(train_dataset)
     # dev_init_op = dev_iterator.make_initializer(dev_dataset)
@@ -121,6 +123,7 @@ def train(args, config):
                     print("Better val accuray: {:.4g}%, saving at {}.".format(val_acc * 100, checkpoint_dir))
                 else:
                     print('Val accuray: {:.4g}%'.format(val_acc * 100))
+                sys.stdout.flush()
 
     sess.close()
 
@@ -130,7 +133,7 @@ def test(args, config):
     test_datasize = len(query_test)
 
     with tf.variable_scope('Model', reuse=None):
-        model = SimNet(config)
+        model = SimNet(config, args.encoder_type)
 
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.5)
     sess_config = tf.ConfigProto(gpu_options=gpu_options,
@@ -186,9 +189,11 @@ def test(args, config):
 
 
 def inference(args, config):
-    infer_data, infer_idx, train_pos_idx = inference_data_loader(args, config)
+    infer_text, infer_session, infer_idx, train_pos_idx = inference_data_loader(args, config)
+    if os.path.exists(args.infer_out_file):
+        os.remove(args.infer_out_file)
     with tf.variable_scope('Model', reuse=None):
-        model = SimNet(config)
+        model = SimNet(config, args.encoder_type)
 
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.5)
     sess_config = tf.ConfigProto(gpu_options=gpu_options,
@@ -198,22 +203,22 @@ def inference(args, config):
 
     with tf.Session(config=sess_config) as sess:
         step = 0
+        batch_num = 0
         checkpoint_file = os.path.join(config['model_dir'], 'model-best')
         saver = tf.train.Saver()
         saver.restore(sess, checkpoint_file)
 
-        infer_batches = batch_iter(list(zip(infer_idx)), config['batch_size'], 1, shuffle=False)
+        infer_batches = batch_iter(infer_idx, config['batch_size'], 1, shuffle=False)
 
         pos_fc_out = sess.run(model.query_encoder.fc_out,
                               feed_dict={model.query: train_pos_idx})
-        for batch in tqdm(infer_batches):
-            step += len(batch)
-            infer_batch = zip(*batch)
+        for infer_batch in tqdm(infer_batches):
+            step += len(infer_batch)
             infer_fc_out = sess.run(model.query_encoder.fc_out,
                     feed_dict={model.query: infer_batch})
-            for i in range(len(batch)):
+            for i in range(len(infer_batch)):
                 feed_dict = {
-                        model.query_vec: np.repeat(np.expand_dims(query_fc_out[i], axis=0), len(train_pos_idx), axis=0),
+                        model.query_vec: np.repeat(np.expand_dims(infer_fc_out[i], axis=0), len(train_pos_idx), axis=0),
                         model.pos_vec: pos_fc_out
                 }
                 infer_pos_score = sess.run(model.pos_score, feed_dict)
@@ -221,7 +226,14 @@ def inference(args, config):
                     pred_label = 1
                 else:
                     pred_label = 0
-                
+                if pred_label == 1:
+                    sample_id = batch_num * config['batch_size'] + i
+                    with open(args.infer_out_file, 'a') as f:
+                        f.write('{}.json,{},{}\n'.format(infer_session[sample_id], ' '.join(infer_text[sample_id]), np.mean(infer_pos_score)))
+
+            batch_num += 1
+
+    sess.close()
 
 
 def main(_):

@@ -1,0 +1,21 @@
+nohup: ignoring input
+/data00/home/wupeihao/anaconda4/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+loading inference data...
+Loading Vocabulary Size:12683
+WARNING:tensorflow:From /data00/home/zhaodongdi/workspace/lab-speech/SimNet/src/model.py:149: calling l2_normalize (from tensorflow.python.ops.nn_impl) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+2018-08-02 16:31:53.222458: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-08-02 16:31:54.385373: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:02:00.0
+totalMemory: 10.92GiB freeMemory: 193.56MiB
+2018-08-02 16:31:54.385427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
+2018-08-02 16:31:54.713283: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-08-02 16:31:54.713341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
+2018-08-02 16:31:54.713353: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
+2018-08-02 16:31:54.713523: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5589 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+2018-08-02 16:31:55.606449: E tensorflow/stream_executor/cuda/cuda_dnn.cc:455] could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+2018-08-02 16:31:55.606525: F tensorflow/core/kernels/conv_ops.cc:713] Check failed: stream->parent()->GetConvolveAlgorithms( conv_parameters.ShouldIncludeWinogradNonfusedAlgo<T>(), &algorithms) 
+scripts/inference.sh: line 8: 2496232 Aborted                 (core dumped) /data00/home/wupeihao/anaconda4/bin/python src/tf_simnet.py --mode inference --encoder_type cnn --train_pos_file data/abuse/train.pos.token --infer_file data/strong/20180727_all.txt --infer_out_file data/abuse/abuse_result_cnn_20180727_t0.995.txt --config conf/train.conf
