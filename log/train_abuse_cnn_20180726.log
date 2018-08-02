@@ -1,51 +1,0 @@
-/data00/home/wupeihao/anaconda4/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
-  from ._conv import register_converters as _register_converters
-loading data...
-Start Vocab Create
-Data Load End For Vocab Create
-Vocabulary Size: 12683
-WARNING:tensorflow:From /data00/home/zhaodongdi/workspace/lab-speech/SimNet/src/model.py:149: calling l2_normalize (from tensorflow.python.ops.nn_impl) with dim is deprecated and will be removed in a future version.
-Instructions for updating:
-dim is deprecated, use axis instead
-2018-08-01 21:04:53.269064: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2018-08-01 21:04:55.906785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
-name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
-pciBusID: 0000:84:00.0
-totalMemory: 10.92GiB freeMemory: 10.76GiB
-2018-08-01 21:04:55.906839: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
-2018-08-01 21:04:56.212568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
-2018-08-01 21:04:56.212625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
-2018-08-01 21:04:56.212638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
-2018-08-01 21:04:56.212946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5589 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:84:00.0, compute capability: 6.1)
-0it [00:00, ?it/s]3it [00:00, 24.91it/s]4it [00:00, 24.45it/s]
-0it [00:00, ?it/s]3it [00:00, 24.87it/s]4it [00:00, 24.40it/s]
-step 1, loss 1.99971.
-step 1001, loss 0.111623.
-step 2001, loss 0.204279.
-step 3001, loss 0.126652.
-step 4001, loss 0.00410304.
-step 5001, loss 0.0671947.
-step 6001, loss 0.17031.
-step 7001, loss 0.00062751.
-step 8001, loss 0.0341062.
-step 9001, loss 0.0630907.
-Evaluating.
-Better val accuray: 99%, saving at /data00/home/zhaodongdi/workspace/lab-speech/SimNet/checkpoints/abuse/cnn.
-step 10001, loss 0.0631629.
-step 11001, loss 0.063099.
-step 12001, loss 0.0627291.
-step 13001, loss 0.0625798.
-step 14001, loss 0.0312687.
-step 15001, loss 2.58433e-05.
-step 16001, loss 0.0625229.
-step 17001, loss 0.0315527.
-step 18001, loss 0.325433.
-step 19001, loss 0.0625621.
-Evaluating.
-Better val accuray: 99%, saving at /data00/home/zhaodongdi/workspace/lab-speech/SimNet/checkpoints/abuse/cnn.
-step 20001, loss 0.0312717.
-step 21001, loss 0.0625107.
-step 22001, loss 0.0315283.
-step 23001, loss 8.25413e-05.
-step 24001, loss 4.2825e-05.
-step 25001, loss 0.000228175.

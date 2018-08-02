@@ -1,327 +1,0 @@
-nohup: ignoring input
-/data00/home/wupeihao/anaconda4/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
-  from ._conv import register_converters as _register_converters
-loading data...
-Start Vocab Create
-Data Load End For Vocab Create
-Vocabulary Size: 18484
-WARNING:tensorflow:From /data00/home/zhaodongdi/workspace/lab-speech/SimNet/src/model.py:149: calling l2_normalize (from tensorflow.python.ops.nn_impl) with dim is deprecated and will be removed in a future version.
-Instructions for updating:
-dim is deprecated, use axis instead
-2018-08-02 10:31:43.007260: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2018-08-02 10:31:45.091659: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
-name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
-pciBusID: 0000:84:00.0
-totalMemory: 10.92GiB freeMemory: 10.56GiB
-2018-08-02 10:31:45.091715: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
-2018-08-02 10:31:45.374873: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
-2018-08-02 10:31:45.374934: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
-2018-08-02 10:31:45.374945: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
-2018-08-02 10:31:45.375247: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5589 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:84:00.0, compute capability: 6.1)
-0it [00:00, ?it/s]2it [00:00, 14.02it/s]4it [00:00, 14.29it/s]6it [00:00, 14.48it/s]8it [00:00, 14.59it/s]10it [00:00, 14.66it/s]11it [00:00, 15.37it/s]
-step 1, loss 1.99514.
-step 1001, loss 0.0990035.
-step 2001, loss 0.0985386.
-step 3001, loss 0.0348201.
-step 4001, loss 0.149256.
-step 5001, loss 0.00895941.
-step 6001, loss 0.000932651.
-step 7001, loss 0.000592711.
-step 8001, loss 0.0330381.
-step 9001, loss 0.0320042.
-Evaluating.
-Better val accuray: 96.28%, saving at /data00/home/zhaodongdi/workspace/lab-speech/SimNet/checkpoints/strong/cnn.
-0it [00:00, ?it/s]2it [00:00, 14.32it/s]4it [00:00, 14.63it/s]6it [00:00, 14.74it/s]8it [00:00, 14.77it/s]10it [00:00, 14.71it/s]11it [00:00, 15.38it/s]
-step 10001, loss 0.032688.
-step 11001, loss 0.06273.
-step 12001, loss 0.00144327.
-step 13001, loss 0.031588.
-step 14001, loss 0.0943674.
-step 15001, loss 0.000320606.
-step 16001, loss 0.00340072.
-step 17001, loss 0.00123433.
-step 18001, loss 0.000537639.
-step 19001, loss 0.0628658.
-Evaluating.
-Val accuray: 95.98%
-0it [00:00, ?it/s]2it [00:00, 14.50it/s]4it [00:00, 14.47it/s]6it [00:00, 14.51it/s]8it [00:00, 14.56it/s]10it [00:00, 14.60it/s]11it [00:00, 15.38it/s]
-step 20001, loss 0.0938911.
-step 21001, loss 0.033735.
-step 22001, loss 0.0313256.
-step 23001, loss 0.000373.
-step 24001, loss 0.000170708.
-step 25001, loss 0.00041157.
-step 26001, loss 0.0942543.
-step 27001, loss 0.0332097.
-step 28001, loss 0.000207998.
-step 29001, loss 0.0315618.
-Evaluating.
-Val accuray: 96.13%
-0it [00:00, ?it/s]2it [00:00, 14.71it/s]4it [00:00, 14.88it/s]6it [00:00, 15.00it/s]8it [00:00, 14.98it/s]10it [00:00, 14.76it/s]11it [00:00, 15.38it/s]
-step 30001, loss 0.0313069.
-step 31001, loss 0.0263295.
-step 32001, loss 0.0968826.
-step 33001, loss 0.0318476.
-step 34001, loss 5.26179e-05.
-step 35001, loss 0.0630232.
-step 36001, loss 0.0625744.
-step 37001, loss 0.000633172.
-step 38001, loss 2.0382e-05.
-step 39001, loss 0.0330516.
-Evaluating.
-Val accuray: 95.98%
-0it [00:00, ?it/s]2it [00:00, 14.18it/s]4it [00:00, 14.47it/s]6it [00:00, 14.62it/s]8it [00:00, 14.67it/s]10it [00:00, 14.64it/s]11it [00:00, 15.38it/s]
-step 40001, loss 0.000127177.
-step 41001, loss 0.0312628.
-step 42001, loss 0.0313419.
-step 43001, loss 0.031313.
-step 44001, loss 0.0625184.
-step 45001, loss 0.00206508.
-step 46001, loss 0.0313693.
-step 47001, loss 0.0313536.
-step 48001, loss 0.00073467.
-step 49001, loss 0.0317397.
-Evaluating.
-Better val accuray: 96.44%, saving at /data00/home/zhaodongdi/workspace/lab-speech/SimNet/checkpoints/strong/cnn.
-0it [00:00, ?it/s]2it [00:00, 14.13it/s]4it [00:00, 14.24it/s]6it [00:00, 14.20it/s]8it [00:00, 14.35it/s]10it [00:00, 14.47it/s]11it [00:00, 15.39it/s]
-step 50001, loss 0.0937872.
-step 51001, loss 0.000283206.
-step 52001, loss 0.0312663.
-step 53001, loss 0.0626334.
-step 54001, loss 0.000224024.
-step 55001, loss 0.0618879.
-step 56001, loss 9.44082e-06.
-step 57001, loss 0.0749471.
-step 58001, loss 9.93256e-06.
-step 59001, loss 7.45784e-05.
-Evaluating.
-Val accuray: 95.82%
-0it [00:00, ?it/s]2it [00:00, 14.31it/s]4it [00:00, 14.29it/s]6it [00:00, 14.39it/s]8it [00:00, 14.41it/s]10it [00:00, 14.41it/s]11it [00:00, 15.38it/s]
-step 60001, loss 0.0312976.
-step 61001, loss 6.02379e-05.
-step 62001, loss 0.0625238.
-step 63001, loss 0.00116171.
-step 64001, loss 0.00450001.
-step 65001, loss 5.28675e-05.
-step 66001, loss 0.00137932.
-step 67001, loss 1.10772e-05.
-step 68001, loss 0.03127.
-step 69001, loss 0.100595.
-Evaluating.
-Val accuray: 95.51%
-0it [00:00, ?it/s]2it [00:00, 12.06it/s]4it [00:00, 12.01it/s]6it [00:00, 12.12it/s]8it [00:00, 12.17it/s]10it [00:00, 12.21it/s]11it [00:00, 12.71it/s]
-step 70001, loss 0.0313899.
-step 71001, loss 0.0312578.
-step 72001, loss 4.5076e-06.
-step 73001, loss 1.23121e-06.
-step 74001, loss 0.00152425.
-step 75001, loss 0.000101971.
-step 76001, loss 0.000481632.
-step 77001, loss 5.82114e-05.
-step 78001, loss 7.17659e-05.
-step 79001, loss 1.97198e-05.
-Evaluating.
-Val accuray: 95.67%
-0it [00:00, ?it/s]2it [00:00, 13.65it/s]4it [00:00, 14.05it/s]6it [00:00, 14.14it/s]8it [00:00, 13.96it/s]10it [00:00, 13.82it/s]11it [00:00, 14.38it/s]
-step 80001, loss 0.0312523.
-step 81001, loss 0.031251.
-step 82001, loss 0.00109784.
-step 83001, loss 8.91369e-06.
-step 84001, loss 1.71792e-05.
-step 85001, loss 3.05101e-06.
-step 86001, loss 7.42264e-07.
-step 87001, loss 0.0314635.
-step 88001, loss 4.5876e-05.
-step 89001, loss 0.0313593.
-Evaluating.
-Val accuray: 95.67%
-0it [00:00, ?it/s]2it [00:00, 12.83it/s]4it [00:00, 12.22it/s]6it [00:00, 11.94it/s]8it [00:00, 12.00it/s]10it [00:00, 12.00it/s]11it [00:00, 12.71it/s]
-step 90001, loss 0.0625132.
-step 91001, loss 6.24955e-05.
-step 92001, loss 1.45501e-05.
-step 93001, loss 1.74763e-05.
-step 94001, loss 0.000269995.
-step 95001, loss 0.00017464.
-step 96001, loss 0.0313078.
-step 97001, loss 6.1458e-06.
-step 98001, loss 0.00772897.
-step 99001, loss 1.4931e-05.
-Evaluating.
-Val accuray: 94.89%
-0it [00:00, ?it/s]2it [00:00, 12.88it/s]4it [00:00, 12.03it/s]6it [00:00, 12.02it/s]8it [00:00, 11.90it/s]10it [00:00, 11.91it/s]11it [00:00, 12.68it/s]
-step 100001, loss 0.0627175.
-step 101001, loss 8.7535e-06.
-step 102001, loss 0.0312519.
-step 103001, loss 0.0312503.
-step 104001, loss 1.49012e-07.
-step 105001, loss 1.37836e-07.
-step 106001, loss 0.031544.
-step 107001, loss 0.0625394.
-step 108001, loss 2.08849e-05.
-step 109001, loss 6.46058e-06.
-Evaluating.
-Val accuray: 95.36%
-0it [00:00, ?it/s]2it [00:00, 11.88it/s]4it [00:00, 11.91it/s]6it [00:00, 11.68it/s]8it [00:00, 11.72it/s]10it [00:00, 11.88it/s]11it [00:00, 12.71it/s]
-step 110001, loss 1.37119e-05.
-step 111001, loss 0.0313321.
-step 112001, loss 3.51351e-05.
-step 113001, loss 1.4253e-05.
-step 114001, loss 1.91843e-05.
-step 115001, loss 1.07652e-05.
-step 116001, loss 1.50194e-05.
-step 117001, loss 0.0312763.
-step 118001, loss 8.73543e-05.
-step 119001, loss 0.0312735.
-Evaluating.
-Val accuray: 95.36%
-0it [00:00, ?it/s]2it [00:00, 13.67it/s]4it [00:00, 14.12it/s]6it [00:00, 14.33it/s]8it [00:00, 14.50it/s]10it [00:00, 14.55it/s]11it [00:00, 15.38it/s]
-step 120001, loss 4.2716e-05.
-step 121001, loss 1.15791e-05.
-step 122001, loss 3.31365e-06.
-step 123001, loss 0.0312506.
-step 124001, loss 2.40281e-07.
-step 125001, loss 7.4313e-05.
-step 126001, loss 0.000148357.
-step 127001, loss 0.0625137.
-step 128001, loss 0.0314406.
-step 129001, loss 0.000104425.
-Evaluating.
-Val accuray: 95.2%
-0it [00:00, ?it/s]2it [00:00, 14.81it/s]4it [00:00, 14.82it/s]6it [00:00, 14.72it/s]8it [00:00, 14.79it/s]10it [00:00, 14.80it/s]11it [00:00, 15.38it/s]
-step 130001, loss 7.48411e-06.
-step 131001, loss 0.000136779.
-step 132001, loss 0.0312528.
-step 133001, loss 0.0312531.
-step 134001, loss 0.0313539.
-step 135001, loss 1.25561e-05.
-step 136001, loss 0.0313045.
-step 137001, loss 3.24287e-05.
-step 138001, loss 9.93628e-06.
-step 139001, loss 0.000476317.
-Evaluating.
-Val accuray: 95.05%
-0it [00:00, ?it/s]2it [00:00, 14.30it/s]4it [00:00, 14.52it/s]6it [00:00, 14.48it/s]8it [00:00, 14.59it/s]10it [00:00, 14.59it/s]11it [00:00, 15.37it/s]
-step 140001, loss 0.0312819.
-step 141001, loss 9.357e-06.
-step 142001, loss 1.82921e-05.
-step 143001, loss 5.05531e-05.
-step 144001, loss 0.0630498.
-step 145001, loss 1.61193e-05.
-step 146001, loss 6.19516e-06.
-step 147001, loss 6.34231e-07.
-step 148001, loss 6.56582e-07.
-step 149001, loss 2.50526e-07.
-Evaluating.
-Val accuray: 94.43%
-0it [00:00, ?it/s]2it [00:00, 14.24it/s]4it [00:00, 14.23it/s]6it [00:00, 14.34it/s]8it [00:00, 14.47it/s]10it [00:00, 14.52it/s]11it [00:00, 15.38it/s]
-step 150001, loss 0.0312501.
-step 151001, loss 0.0312507.
-step 152001, loss 0.0314298.
-step 153001, loss 0.0627042.
-step 154001, loss 3.7333e-05.
-step 155001, loss 1.88816e-05.
-step 156001, loss 0.000154748.
-step 157001, loss 0.0312753.
-step 158001, loss 0.0313961.
-step 159001, loss 0.0625113.
-Evaluating.
-Val accuray: 95.51%
-0it [00:00, ?it/s]2it [00:00, 14.36it/s]4it [00:00, 14.37it/s]6it [00:00, 14.47it/s]8it [00:00, 14.50it/s]10it [00:00, 14.57it/s]11it [00:00, 15.39it/s]
-step 160001, loss 8.07075e-05.
-step 161001, loss 1.95894e-05.
-step 162001, loss 2.76649e-05.
-step 163001, loss 0.03126.
-step 164001, loss 2.74088e-06.
-step 165001, loss 0.0313744.
-step 166001, loss 1.57775e-05.
-step 167001, loss 0.0340834.
-step 168001, loss 0.000176814.
-step 169001, loss 0.0312655.
-Evaluating.
-Val accuray: 94.89%
-0it [00:00, ?it/s]2it [00:00, 12.40it/s]4it [00:00, 12.13it/s]6it [00:00, 12.13it/s]8it [00:00, 11.87it/s]10it [00:00, 12.02it/s]11it [00:00, 12.71it/s]
-step 170001, loss 0.000128062.
-step 171001, loss 1.54572e-05.
-step 172001, loss 5.27129e-06.
-step 173001, loss 0.00179798.
-step 174001, loss 0.0312774.
-step 175001, loss 0.0312591.
-step 176001, loss 0.0312513.
-step 177001, loss 0.0312973.
-step 178001, loss 0.0312502.
-step 179001, loss 1.76951e-07.
-Evaluating.
-Val accuray: 95.05%
-0it [00:00, ?it/s]2it [00:00, 14.63it/s]4it [00:00, 14.73it/s]6it [00:00, 14.83it/s]8it [00:00, 14.84it/s]10it [00:00, 14.80it/s]11it [00:00, 15.38it/s]
-step 180001, loss 1.35042e-07.
-step 181001, loss 2.97558e-05.
-step 182001, loss 0.00105715.
-step 183001, loss 8.6952e-05.
-step 184001, loss 0.000784596.
-step 185001, loss 2.08011e-05.
-step 186001, loss 0.0267077.
-step 187001, loss 0.0312695.
-step 188001, loss 5.89527e-06.
-step 189001, loss 5.72391e-06.
-Evaluating.
-Val accuray: 94.43%
-0it [00:00, ?it/s]2it [00:00, 13.26it/s]4it [00:00, 12.48it/s]6it [00:00, 12.32it/s]8it [00:00, 12.22it/s]10it [00:00, 12.17it/s]11it [00:00, 12.68it/s]
-step 190001, loss 0.0625016.
-step 191001, loss 0.0625008.
-step 192001, loss 0.031375.
-step 193001, loss 0.000117925.
-step 194001, loss 2.54791e-05.
-step 195001, loss 4.22737e-05.
-step 196001, loss 0.000141768.
-step 197001, loss 3.8119e-05.
-step 198001, loss 4.09689e-05.
-step 199001, loss 0.000134678.
-Evaluating.
-Val accuray: 94.89%
-0it [00:00, ?it/s]2it [00:00, 14.10it/s]4it [00:00, 14.10it/s]6it [00:00, 14.22it/s]8it [00:00, 14.27it/s]10it [00:00, 14.28it/s]11it [00:00, 15.37it/s]
-step 200001, loss 0.000190084.
-step 201001, loss 0.000190092.
-step 202001, loss 2.60016e-05.
-step 203001, loss 4.43123e-06.
-step 204001, loss 1.75359e-05.
-step 205001, loss 0.0312532.
-step 206001, loss 7.1805e-07.
-step 207001, loss 1.37743e-06.
-step 208001, loss 3.78117e-07.
-step 209001, loss 0.00101343.
-Evaluating.
-Val accuray: 94.74%
-0it [00:00, ?it/s]2it [00:00, 14.20it/s]4it [00:00, 14.34it/s]6it [00:00, 14.50it/s]8it [00:00, 14.61it/s]10it [00:00, 14.64it/s]11it [00:00, 15.36it/s]
-step 210001, loss 0.00033344.
-step 211001, loss 3.83677e-05.
-step 212001, loss 8.14162e-06.
-step 213001, loss 5.17443e-06.
-step 214001, loss 0.0312512.
-step 215001, loss 5.75557e-07.
-step 216001, loss 3.09199e-07.
-step 217001, loss 8.10251e-07.
-step 218001, loss 8.3074e-07.
-step 219001, loss 0.000243115.
-Evaluating.
-Val accuray: 94.43%
-0it [00:00, ?it/s]2it [00:00, 13.60it/s]4it [00:00, 14.08it/s]6it [00:00, 14.33it/s]8it [00:00, 14.44it/s]10it [00:00, 14.52it/s]11it [00:00, 15.38it/s]
-step 220001, loss 0.00325346.
-step 221001, loss 5.82831e-05.
-step 222001, loss 0.000273075.
-step 223001, loss 0.00121955.
-step 224001, loss 0.0312866.
-step 225001, loss 0.000392628.
-step 226001, loss 2.3826e-05.
-step 227001, loss 0.0312619.
-step 228001, loss 4.7572e-06.
-step 229001, loss 9.72394e-06.
-Evaluating.
-Val accuray: 94.89%
-step 230001, loss 0.000376804.
-step 231001, loss 5.67958e-05.
-step 232001, loss 5.5464e-05.
-step 233001, loss 3.82205e-05.
-step 234001, loss 0.0312602.
-step 235001, loss 4.16674e-06.
-step 236001, loss 1.94926e-06.
-step 237001, loss 0.0625566.
