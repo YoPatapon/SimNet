@@ -78,9 +78,12 @@ class Vocab():
 
         cnt = 0
         for line in open(filename):
-            idx, word = line.strip().split('\t')
-            self.char2id_dict[word] = int(idx)
-            self.id2char_dict[int(idx)] = word
+            try:
+                idx, word = line.strip().split('\t')
+                self.char2id_dict[word] = int(idx)
+                self.id2char_dict[int(idx)] = word
+            except:
+                continue
             cnt += 1
             if cnt == self._vocab_size: break
         self._vocab_size = len(self.id2char_dict)
@@ -222,18 +225,31 @@ def test_data_loader(args, config):
     return np.array(query_test), np.array(label_test), np.array(train_pos_idx), len(test_pos_idx), len(test_neg_idx)
 
 
+def load_inference_data(infer_file=""):
+    session_text = []
+    session_index = []
+    if infer_file != "":
+        for line in open(infer_file, 'r'):
+            index, sentence = line.strip().split(',')
+            session_text.append(sentence)
+            session_index.append(int(index.strip('.json')))
+
+        session_text = [sent.split(' ') for sent in session_text]
+    return session_text, np.array(session_index)
+
+
 def inference_data_loader(args, config):
     print("loading inference data...")
     seq_length = int(config['seq_length'])
     train_pos_data = load_data(args.train_pos_file)
-    infer_data = load_data(args.infer_file)
+    session_text, session_index = load_inference_data(args.infer_file)
 
     vocab = Vocab()
     vocab.load_metadata(config['metadata'])
 
     train_pos_idx = data_to_idx(train_pos_data, vocab, seq_length)
-    infer_idx = data_to_idx(infer_data, vocab, seq_length)
-    return np.array(infer_data), np.array(infer_idx), np.array(train_pos_idx)
+    infer_idx = data_to_idx(session_text, vocab, seq_length)
+    return session_text, session_index, np.array(infer_idx), np.array(train_pos_idx)
 
 
 def batch_iter(data, batch_size, num_epochs, shuffle=True):
